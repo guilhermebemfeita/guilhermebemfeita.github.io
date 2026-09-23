@@ -1,3 +1,189 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #ff0000;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  line-height: 1.6;
+}
+
+
+
+header {
+  background: linear-gradient(135deg, #1f2937, #34495e);
+  color: white;
+  padding: 25px 40px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 15px 0;
+  font-size: 36px;
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  background-color: #2980b9;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #1f6391;
+}
+
+
+
+main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+main h2 {
+  color: #2c3e50;
+  border-bottom: 3px solid #2980b9;
+  padding-bottom: 8px;
+}
+
+main h3 {
+  color: #2c3e50;
+  margin-top: 30px;
+}
+
+main p {
+  font-size: 17px;
+}
+
+
+a {
+  color: #2980b9;
+}
+
+a:hover {
+  color: #1f6391;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  margin: 25px 0;
+  background-color: white;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+td {
+  color: #333;
+}
+
+
+
+.fotografias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.fotografias img {
+  width: 180px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fotografias img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+iframe {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+
+
+.poema {
+  padding: 20px;
+  background-color: #f1f5f9;
+  border-left: 5px solid #2980b9;
+  border-radius: 8px;
+  max-width: 600px;
+}
+
+.poema p {
+  margin: 8px 0;
+}
+
+
+li {
+  margin-bottom: 10px;
+}
+
+
+footer {
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+
+@media (max-width: 700px) {
+  header {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  main {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .fotografias img {
+    width: 140px;
+    height: 110px;
+  }
 }
