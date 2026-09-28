@@ -234,6 +234,23 @@ footer p {
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
 }
 
+.localizacao-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.localizacao-conteudo p {
+  width: 45%;
+  margin: 0;
+}
+
+.localizacao-conteudo iframe {
+  width: 50%;
+  max-width: 500px;
+}
+
 @media (max-width: 700px) {
   header {
     padding: 20px 10px;
@@ -313,5 +330,19 @@ footer p {
 
   .imagem-emblematica p {
     font-size: 8vw;
+  }
+
+  .localizacao-conteudo {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .localizacao-conteudo p {
+    width: 100%;
+  }
+
+  .localizacao-conteudo iframe {
+    width: 100%;
+    max-width: 100%;
   }
 }
