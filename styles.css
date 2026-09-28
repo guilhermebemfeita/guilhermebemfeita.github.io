@@ -12,113 +12,75 @@ body {
   color: #222;
 }
 
-
-/* =========================
-   HERO
-========================= */
-
 .hero {
   height: 100vh;
-
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.45),
       rgba(0, 0, 0, 0.45)
     ),
     url("images/hero.jpg");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   position: relative;
-
   color: white;
 }
 
-
-/* MENU */
-
-nav {
+.hero nav {
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 100%;
-
   padding: 25px;
 }
 
-nav ul {
+.hero nav ul {
   list-style: none;
-
   margin: 0;
   padding: 0;
-
   display: flex;
   justify-content: flex-end;
-
   gap: 30px;
 }
 
-nav a {
+.hero nav a {
   color: white;
-
   text-decoration: none;
-
   font-size: 18px;
   font-weight: bold;
 }
 
-nav a:hover {
+.hero nav a:hover {
   text-decoration: underline;
 }
 
-
-/* TEXTO HERO */
-
 .hero-conteudo {
   position: absolute;
-
   top: 50%;
   left: 10%;
-
   transform: translateY(-50%);
-
   max-width: 700px;
 }
 
 .hero-conteudo p {
   font-size: 20px;
-
   margin-bottom: 15px;
 }
 
 .hero-conteudo h1 {
   font-size: 55px;
-
   line-height: 1.1;
-
   margin: 0 0 30px;
 }
 
-
-/* BOTÃO */
-
 .botao {
   display: inline-block;
-
   background: #3498db;
-
   color: white;
-
   text-decoration: none;
-
   padding: 15px 25px;
-
   border-radius: 8px;
-
   font-weight: bold;
 }
 
@@ -126,39 +88,23 @@ nav a:hover {
   background: #217dbb;
 }
 
-
-/* =========================
-   PROJETOS
-========================= */
-
 .projetos {
   height: 100vh;
-
   background: #f2f4f7;
-
   padding: 60px 8%;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
-
-/* TITULO */
-
 .projetos > header {
   text-align: center;
-
   margin-bottom: 40px;
 }
 
 .projetos h2 {
   font-size: 42px;
-
   margin: 0 0 10px;
-
   color: #2c3e50;
 }
 
@@ -166,64 +112,41 @@ nav a:hover {
   font-size: 18px;
 }
 
-
-/* CARDS */
-
 .cards {
   display: flex;
-
   justify-content: center;
-
   align-items: stretch;
-
   gap: 30px;
-
   flex-wrap: wrap;
 }
 
 .card {
   background: white;
-
   width: 30%;
-
   min-width: 250px;
-
   padding: 30px;
-
   border-radius: 12px;
-
-  box-shadow:
-    0 4px 15px
-    rgba(0, 0, 0, 0.1);
-
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
 }
 
 .card h3 {
   color: #2c3e50;
-
   font-size: 28px;
-
   margin-top: 0;
 }
 
 .card p {
   font-size: 17px;
-
   line-height: 1.5;
 }
 
 .card a {
   color: #3498db;
-
   text-decoration: none;
-
   font-weight: bold;
-
   margin-top: 20px;
 }
 
@@ -231,29 +154,15 @@ nav a:hover {
   text-decoration: underline;
 }
 
-
-/* =========================
-   DISCIPLINA
-========================= */
-
 .disciplina {
   height: 100vh;
-
   background: #dfeaf2;
-
   padding: 60px 8%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 80px;
 }
-
-
-/* TEXTO */
 
 .texto-disciplina {
   width: 50%;
@@ -261,15 +170,12 @@ nav a:hover {
 
 .texto-disciplina h2 {
   color: #2c3e50;
-
   font-size: 42px;
-
   margin-top: 0;
 }
 
 .texto-disciplina p {
   font-size: 18px;
-
   line-height: 1.7;
 }
 
@@ -279,51 +185,121 @@ nav a:hover {
 
 .texto-disciplina ul {
   font-size: 18px;
-
   line-height: 2;
 }
 
-
-/* WORDCLOUD */
-
 .wordcloud {
   width: 40%;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 }
 
 .wordcloud img {
   max-width: 100%;
-
   height: auto;
 }
 
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
 
-/* =========================
-   RESPONSIVO
-========================= */
+header h1 {
+  margin: 0 0 20px;
+  font-size: 36px;
+}
+
+body > header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+body > header nav a {
+  display: block;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+}
+
+body > header nav a:hover {
+  background: #217dbb;
+}
+
+.tutoriais {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+}
+
+.tutorial-seccao {
+  margin-bottom: 60px;
+}
+
+.tutorial-seccao h2 {
+  color: #2c3e50;
+  font-size: 38px;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 8px;
+}
+
+.codepens {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.codepens article {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.codepens h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.codepens iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 8px;
+}
+
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  margin: 0;
+}
 
 @media (max-width: 700px) {
-
-  /* HERO */
-
-  nav {
+  .hero nav {
     padding: 20px;
   }
 
-  nav ul {
+  .hero nav ul {
     justify-content: center;
-
     gap: 15px;
-
     flex-wrap: wrap;
   }
 
-  nav a {
+  .hero nav a {
     font-size: 15px;
   }
 
@@ -340,9 +316,6 @@ nav a:hover {
     font-size: 17px;
   }
 
-
-  /* PROJETOS */
-
   .projetos {
     padding: 40px 6%;
   }
@@ -357,17 +330,13 @@ nav a:hover {
 
   .cards {
     flex-direction: column;
-
     align-items: center;
-
     gap: 15px;
   }
 
   .card {
     width: 100%;
-
     min-width: 0;
-
     padding: 18px;
   }
 
@@ -379,16 +348,10 @@ nav a:hover {
     margin: 8px 0;
   }
 
-
-  /* DISCIPLINA */
-
   .disciplina {
     flex-direction: column;
-
     gap: 30px;
-
     padding: 40px 6%;
-
     text-align: center;
   }
 
@@ -406,9 +369,7 @@ nav a:hover {
 
   .texto-disciplina ul {
     display: inline-block;
-
     text-align: left;
-
     font-size: 16px;
   }
 
@@ -418,5 +379,42 @@ nav a:hover {
 
   .wordcloud img {
     max-width: 80%;
+  }
+
+  header {
+    padding: 20px 10px;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  body > header nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  body > header nav a {
+    width: 90%;
+    text-align: center;
+  }
+
+  .tutoriais {
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  .tutorial-seccao h2 {
+    font-size: 30px;
+  }
+
+  .codepens {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .codepens iframe {
+    height: 400px;
   }
 }
