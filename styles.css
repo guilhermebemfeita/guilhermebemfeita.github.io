@@ -2,155 +2,421 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f2f4f7;
   color: #222;
 }
 
-header {
-  background: #2c3e50;
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  height: 100vh;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("images/hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
   color: white;
-  padding: 25px;
-  text-align: center;
 }
 
-header h1 {
-  margin: 0 0 20px;
-  font-size: 36px;
-}
+
+/* MENU */
 
 nav {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 25px;
+}
+
+nav ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  gap: 30px;
 }
 
 nav a {
-  background: #3498db;
   color: white;
+
   text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 6px;
+
+  font-size: 18px;
+  font-weight: bold;
 }
 
 nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* TEXTO HERO */
+
+.hero-conteudo {
+  position: absolute;
+
+  top: 50%;
+  left: 10%;
+
+  transform: translateY(-50%);
+
+  max-width: 700px;
+}
+
+.hero-conteudo p {
+  font-size: 20px;
+
+  margin-bottom: 15px;
+}
+
+.hero-conteudo h1 {
+  font-size: 55px;
+
+  line-height: 1.1;
+
+  margin: 0 0 30px;
+}
+
+
+/* BOTÃO */
+
+.botao {
+  display: inline-block;
+
+  background: #3498db;
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: 15px 25px;
+
+  border-radius: 8px;
+
+  font-weight: bold;
+}
+
+.botao:hover {
   background: #217dbb;
 }
 
-main {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-}
 
-main h2 {
-  color: #2c3e50;
-  border-bottom: 3px solid #3498db;
-  padding-bottom: 8px;
-}
+/* =========================
+   PROJETOS
+========================= */
 
-main h3 {
-  color: #2c3e50;
-  margin-top: 30px;
-}
+.projetos {
+  height: 100vh;
 
-main p {
-  font-size: 17px;
-  line-height: 1.6;
-}
+  background: #f2f4f7;
 
-a {
-  color: #2980b9;
-}
+  padding: 60px 8%;
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 700px;
-  margin: 25px 0;
-}
-
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: center;
-}
-
-th {
-  background: #2c3e50;
-  color: white;
-}
-
-td {
-  background: white;
-  color: #333;
-}
-
-.fotografias {
   display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* TITULO */
+
+.projetos > header {
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+.projetos h2 {
+  font-size: 42px;
+
+  margin: 0 0 10px;
+
+  color: #2c3e50;
+}
+
+.projetos > header p {
+  font-size: 18px;
+}
+
+
+/* CARDS */
+
+.cards {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: stretch;
+
+  gap: 30px;
+
   flex-wrap: wrap;
-  gap: 15px;
+}
+
+.card {
+  background: white;
+
+  width: 30%;
+
+  min-width: 250px;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.1);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.card h3 {
+  color: #2c3e50;
+
+  font-size: 28px;
+
+  margin-top: 0;
+}
+
+.card p {
+  font-size: 17px;
+
+  line-height: 1.5;
+}
+
+.card a {
+  color: #3498db;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
   margin-top: 20px;
 }
 
-.fotografias img {
-  width: 180px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid #ddd;
+.card a:hover {
+  text-decoration: underline;
 }
 
-.fotografias img:hover {
-  transform: scale(1.05);
+
+/* =========================
+   DISCIPLINA
+========================= */
+
+.disciplina {
+  height: 100vh;
+
+  background: #dfeaf2;
+
+  padding: 60px 8%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 80px;
 }
 
-iframe {
+
+/* TEXTO */
+
+.texto-disciplina {
+  width: 50%;
+}
+
+.texto-disciplina h2 {
+  color: #2c3e50;
+
+  font-size: 42px;
+
+  margin-top: 0;
+}
+
+.texto-disciplina p {
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+.texto-disciplina a {
+  color: #2980b9;
+}
+
+.texto-disciplina ul {
+  font-size: 18px;
+
+  line-height: 2;
+}
+
+
+/* WORDCLOUD */
+
+.wordcloud {
+  width: 40%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.wordcloud img {
   max-width: 100%;
-  border: 0;
-  border-radius: 10px;
-  margin-top: 15px;
+
+  height: auto;
 }
 
-.poema {
-  padding: 20px;
-  background: #f1f5f9;
-  border-left: 5px solid #3498db;
-  border-radius: 8px;
-}
 
-.poema p {
-  margin: 8px 0;
-}
-
-footer {
-  background: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
+/* =========================
+   RESPONSIVO
+========================= */
 
 @media (max-width: 700px) {
-  main {
-    margin: 15px;
+
+  /* HERO */
+
+  nav {
     padding: 20px;
   }
 
-  nav {
-    flex-direction: column;
-    align-items: center;
+  nav ul {
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
   }
 
-  .fotografias img {
-    width: 140px;
-    height: 110px;
+  nav a {
+    font-size: 15px;
+  }
+
+  .hero-conteudo {
+    left: 8%;
+    right: 8%;
+  }
+
+  .hero-conteudo h1 {
+    font-size: 38px;
+  }
+
+  .hero-conteudo p {
+    font-size: 17px;
+  }
+
+
+  /* PROJETOS */
+
+  .projetos {
+    padding: 40px 6%;
+  }
+
+  .projetos h2 {
+    font-size: 32px;
+  }
+
+  .projetos > header {
+    margin-bottom: 25px;
+  }
+
+  .cards {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 18px;
+  }
+
+  .card h3 {
+    font-size: 23px;
+  }
+
+  .card p {
+    margin: 8px 0;
+  }
+
+
+  /* DISCIPLINA */
+
+  .disciplina {
+    flex-direction: column;
+
+    gap: 30px;
+
+    padding: 40px 6%;
+
+    text-align: center;
+  }
+
+  .texto-disciplina {
+    width: 100%;
+  }
+
+  .texto-disciplina h2 {
+    font-size: 30px;
+  }
+
+  .texto-disciplina p {
+    font-size: 16px;
+  }
+
+  .texto-disciplina ul {
+    display: inline-block;
+
+    text-align: left;
+
+    font-size: 16px;
+  }
+
+  .wordcloud {
+    width: 100%;
+  }
+
+  .wordcloud img {
+    max-width: 80%;
   }
 }
