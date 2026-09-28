@@ -108,21 +108,22 @@ td {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
 }
 
 .fotografias img {
-  width: 150px;
-  height: 120px;
+  width: 180px;
+  height: 130px;
   object-fit: cover;
   border-radius: 20px;
-  border: 2px solid #ddd;
+  transition: transform 0.4s, box-shadow 0.4s;
 }
 
 .fotografias img:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s;
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 iframe {
@@ -133,7 +134,7 @@ iframe {
 }
 
 .poema {
-  padding: 20px;
+  padding: 30px;
   background: #f1f5f9;
   border-left: 5px solid #3498db;
   border-radius: 8px;
@@ -168,6 +169,69 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+.multimedia-main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.multimedia-seccao {
+  min-height: 100vh;
+  padding: 70px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.multimedia-seccao h2 {
+  font-size: 42px;
+  margin-top: 0;
+}
+
+.fotografias-seccao {
+  background: #eaf2f8;
+}
+
+.video-seccao {
+  background: #f9e4e4;
+}
+
+.poema-seccao {
+  background: #e8f5e9;
+}
+
+.imagem-emblematica {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imagem-emblematica img {
+  display: block;
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+.imagem-emblematica p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: 90%;
+  color: white;
+  font-size: 5vw;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 700px) {
@@ -208,7 +272,7 @@ footer p {
   }
 
   .fotografias {
-    justify-content: center;
+    gap: 10px;
   }
 
   .fotografias img {
@@ -232,6 +296,22 @@ footer p {
   }
 
   .poema {
-    padding: 15px;
+    padding: 20px;
+  }
+
+  .multimedia-seccao {
+    padding: 50px 6%;
+  }
+
+  .multimedia-seccao h2 {
+    font-size: 32px;
+  }
+
+  .imagem-emblematica img {
+    height: 60vh;
+  }
+
+  .imagem-emblematica p {
+    font-size: 8vw;
   }
 }
