@@ -207,31 +207,84 @@ footer p {
   background: #e8f5e9;
 }
 
-.imagem-emblematica {
+.video-background {
   position: relative;
   width: 100%;
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.imagem-emblematica img {
-  display: block;
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
-}
-
-.imagem-emblematica p {
+.video-background video {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transform: translate(-50%, -50%);
-  margin: 0;
-  width: 90%;
+}
+
+.video-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.video-background article {
+  position: relative;
+  z-index: 1;
   color: white;
-  font-size: 5vw;
-  font-weight: bold;
+  padding: 20px;
+}
+
+.video-background h2 {
+  color: white;
+  border: 0;
+  font-size: 6vw;
+  margin: 0 0 15px;
+}
+
+.video-background p {
+  font-size: 2vw;
+  margin: 0;
+}
+
+.parallax {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("images/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+  padding: 50px;
+}
+
+.parallax article {
+  color: white;
+  max-width: 800px;
+}
+
+.parallax h2 {
+  color: white;
+  border: 0;
+  font-size: 5vw;
+  margin: 0 0 20px;
+}
+
+.parallax p {
+  font-size: 2vw;
+  margin: 0;
 }
 
 .localizacao-conteudo {
@@ -393,14 +446,6 @@ footer p {
     font-size: 32px;
   }
 
-  .imagem-emblematica img {
-    height: 60vh;
-  }
-
-  .imagem-emblematica p {
-    font-size: 8vw;
-  }
-
   .localizacao-conteudo {
     flex-direction: column;
     gap: 25px;
@@ -437,5 +482,31 @@ footer p {
 
   .card-principal p {
     font-size: 17px;
+  }
+
+  .video-background {
+    height: 80vh;
+  }
+
+  .video-background h2 {
+    font-size: 12vw;
+  }
+
+  .video-background p {
+    font-size: 5vw;
+  }
+
+  .parallax {
+    min-height: 80vh;
+    background-attachment: scroll;
+    padding: 30px;
+  }
+
+  .parallax h2 {
+    font-size: 10vw;
+  }
+
+  .parallax p {
+    font-size: 5vw;
   }
 }
