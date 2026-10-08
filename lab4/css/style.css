@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+header {
+  background: #111;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.intro {
+  background: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.intro h2 {
+  margin-bottom: 15px;
+}
+
+.intro p {
+  margin-bottom: 25px;
+}
+
+#imagem {
+  width: 220px;
+  transition: 0.3s;
+}
+
+.eventos {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.eventos h2 {
+  margin-bottom: 25px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#areaMouse {
+  padding: 50px 20px;
+  border: 2px solid #222;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+#contador {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
