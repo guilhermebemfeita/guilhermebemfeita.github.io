@@ -4,7 +4,6 @@
 :root {
     --background: #0b1020;
     --surface: #121a2d;
-    --surface-light: #19243a;
     --text: #f3f5fb;
     --muted: #a4aec4;
     --accent: #62e6bc;
@@ -42,7 +41,7 @@ a {
     align-items: center;
     gap: 25px;
     border-bottom: 1px solid var(--border);
-    background: rgba(11, 16, 32, 0.96);
+    background: #0b1020;
 }
 
 .logo {
@@ -130,8 +129,8 @@ nav a:hover {
 }
 
 .hero-visual {
-    padding: 28px;
     min-height: 300px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -305,10 +304,6 @@ nav a:hover {
     max-width: 550px;
     margin: 18px 0 25px;
     color: var(--muted);
-}
-
-.button-light {
-    background: var(--accent);
 }
 
 .demo-decoration {
