@@ -1,91 +1,481 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Demonstrações práticas de HTML e CSS de Guilherme.">
+    <title>Demos | Guilherme</title>
     <style>
-        .card {
-            width: 600px;
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 2px solid black;
-    border-radius: 45px;
-    background-color: #f2e6dc;
-}
+        :root {
+            --background: #0b1120;
+            --surface: #121c30;
+            --surface-hover: #182740;
+            --text: #edf3ff;
+            --muted: #9aabc4;
+            --accent: #65e6a5;
+            --border: #293750;
+        }
 
-.card h2 {
-    margin-top: 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.card a {
-    color: brown;
-}
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .topbar {
+            min-height: 76px;
+            padding: 18px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .back-link {
+            color: var(--muted);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 85px 8% 65px;
+            background:
+                radial-gradient(ellipse at 80% 20%, rgba(101, 230, 165, 0.12), transparent 40%),
+                var(--background);
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            max-width: 750px;
+            font-size: clamp(2.5rem, 6vw, 4.7rem);
+            line-height: 1.08;
+            letter-spacing: -2.5px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-description {
+            max-width: 620px;
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 7px 13px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .content {
+            padding: 35px 8% 90px;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .section-heading h2 {
+            font-size: 1.8rem;
+            letter-spacing: -0.7px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .demo-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
+            padding: 25px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.25s, border-color 0.25s, background 0.25s;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-6px);
+            background: var(--surface-hover);
+            border-color: var(--accent);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .number {
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .symbol {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(101, 230, 165, 0.1);
+            border: 1px solid rgba(101, 230, 165, 0.25);
+            border-radius: 12px;
+            color: var(--accent);
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .category {
+            color: var(--muted);
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .demo-card h3 {
+            font-size: 1.22rem;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+
+        .demo-card .description {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .card-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .card-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 13px;
+            border-radius: 9px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .exercise-link {
+            background: var(--accent);
+            color: #08150f;
+        }
+
+        .exercise-link:hover {
+            background: #a0f5c8;
+        }
+
+        .video-link {
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .video-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .bottom-banner {
+            margin-top: 35px;
+            padding: 25px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: linear-gradient(110deg, #14243a, #10251f);
+        }
+
+        .bottom-banner h2 {
+            font-size: 1.15rem;
+            margin-bottom: 5px;
+        }
+
+        .bottom-banner p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .bottom-banner a {
+            flex-shrink: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 1000px) {
+            .demo-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .topbar {
+                padding: 16px 6%;
+            }
+
+            .hero {
+                padding: 60px 6% 45px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .content {
+                padding: 30px 6% 60px;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                align-items: start;
+                flex-direction: column;
+            }
+
+            .demo-card {
+                min-height: 275px;
+            }
+
+            .bottom-banner {
+                align-items: start;
+                flex-direction: column;
+            }
+
+            footer {
+                padding: 22px 6%;
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
-    <article class="card">
-    <h2>Vídeo 1 — CSS Seletores child</h2>
-    <a href="video1.html">Ver exercício</a>
-    <a href="https://youtu.be/AY4S8hP9row?si=iA9zYyyhOyruaE1D" target="_blank"
-       rel="noopener noreferrer">
-        Ver videotutorial associado
-    </a>
-</article>
-<article class="card">
-    <h2>Vídeo 2 — 
-CSS composicao de seletores</h2>
-    <a href="video2.html">Ver exercício</a>
-    <a href="https://youtu.be/lH96UgpDJDs?si=H0o6YWvdq9t7U2ii" target="_blank"
-       rel="noopener noreferrer">
-        Ver videotutorial associado
-    </a>
+    <header class="topbar">
+        <a href="../index.html" class="logo">Guilherme<span>.</span></a>
+        <a href="../index.html" class="back-link">← Voltar ao portefólio</a>
+    </header>
 
-</article>
-<article class="card">
-    <h2>Vídeo 3 — DevTools responsividade</h2>
-    <a href="video3.html">Ver exercício</a>
-    <a href="https://youtu.be/y6bShCEWpFU?si=oLVrnu0M0Qlw687u" target="_blank"
-       rel="noopener noreferrer">
-        Ver videotutorial associado
-    </a>
+    <main>
+        <section class="hero">
+            <p class="eyebrow">Laboratório de desenvolvimento web</p>
+            <h1>Aprender fazendo.<br><span>Experimentar código.</span></h1>
+            <p class="hero-description">
+                Uma coleção de sete demonstrações práticas para explorar seletores CSS,
+                ferramentas de desenvolvimento, layouts responsivos, Flexbox e CSS Grid.
+            </p>
+            <div class="hero-meta">
+                <span class="tag">07 demonstrações</span>
+                <span class="tag">HTML & CSS</span>
+                <span class="tag">Exercícios e vídeos</span>
+            </div>
+        </section>
 
-</article>
-<article class="card">
-    <h2>Vídeo 4 — CSS layout responsivo com media query</h2>
-    <a href="video4.html">Ver exercício</a>
-    <a href="https://youtu.be/i6x37tJY-58?si=V1G87AWSHbvkwdS2" target="_blank"
-       rel="noopener noreferrer">
-        Ver videotutorial associado
-    </a>
+        <section class="content">
+            <div class="section-heading">
+                <h2>Explorar demonstrações</h2>
+                <p>Escolhe um exercício e começa a praticar.</p>
+            </div>
 
-</article>
-<article class="card">
-    <h2>Vídeo 5 — CSS position e seletores varios</h2>
-    <a href="video5.html">Ver exercício</a>
-    <a href="https://youtu.be/Cg9GkRVJUMc?si=Xf-VVTtHK7OmJrqk" target="_blank"
-       rel="noopener noreferrer">
-        Ver videotutorial associado
-    </a>
+            <div class="demo-grid">
+                <article class="demo-card">
+                    <div class="card-top">
+                        <span class="number">DEMO / 01</span>
+                        <span class="symbol">&lt; &gt;</span>
+                    </div>
+                    <p class="category">Seletores CSS</p>
+                    <h3>Seletores child</h3>
+                    <p class="description">Explora como selecionar elementos filhos diretamente através de CSS.</p>
+                    <div class="card-actions">
+                        <a class="exercise-link" href="video1.html">Ver exercício ↗</a>
+                        <a class="video-link" href="https://youtu.be/AY4S8hP9row" target="_blank" rel="noopener noreferrer">Ver vídeo ▶</a>
+                    </div>
+                </article>
 
-</article>
-<article class="card">
-    <h2>Vídeo 6 — CSS flex para centrar smile</h2>
-    <a href="video6.html">Ver exercício</a>
-    <a href="https://youtu.be/eGqXr3iOnRA?si=ALETXKlpaf6zT4wl" target="_blank"
-       rel="noopener noreferrer">
-        Ver videotutorial associado
-    </a>
+                <article class="demo-card">
+                    <div class="card-top">
+                        <span class="number">DEMO / 02</span>
+                        <span class="symbol">{ }</span>
+                    </div>
+                    <p class="category">Seletores CSS</p>
+                    <h3>Composição de seletores</h3>
+                    <p class="description">Combina seletores para aplicar estilos a elementos específicos.</p>
+                    <div class="card-actions">
+                        <a class="exercise-link" href="video2.html">Ver exercício ↗</a>
+                        <a class="video-link" href="https://youtu.be/lH96UgpDJDs" target="_blank" rel="noopener noreferrer">Ver vídeo ▶</a>
+                    </div>
+                </article>
 
-</article>
-<article class="card">
-    <h2>Vídeo 7 — CSS Grid layout</h2>
-    <a href="video7.html">Ver exercício</a>
-    <a href="https://youtu.be/nmofjZIkxjo?si=jzUyoD0EfGUhxKOu" target="_blank"
-       rel="noopener noreferrer">
-        Ver videotutorial associado
-    </a>
+                <article class="demo-card">
+                    <div class="card-top">
+                        <span class="number">DEMO / 03</span>
+                        <span class="symbol">⌕</span>
+                    </div>
+                    <p class="category">Ferramentas web</p>
+                    <h3>DevTools e responsividade</h3>
+                    <p class="description">Experimenta as ferramentas do navegador e testa diferentes tamanhos de ecrã.</p>
+                    <div class="card-actions">
+                        <a class="exercise-link" href="video3.html">Ver exercício ↗</a>
+                        <a class="video-link" href="https://youtu.be/y6bShCEWpFU" target="_blank" rel="noopener noreferrer">Ver vídeo ▶</a>
+                    </div>
+                </article>
 
-</article>
+                <article class="demo-card">
+                    <div class="card-top">
+                        <span class="number">DEMO / 04</span>
+                        <span class="symbol">↔</span>
+                    </div>
+                    <p class="category">Design responsivo</p>
+                    <h3>Media queries</h3>
+                    <p class="description">Adapta a apresentação de uma página a diferentes larguras de ecrã.</p>
+                    <div class="card-actions">
+                        <a class="exercise-link" href="video4.html">Ver exercício ↗</a>
+                        <a class="video-link" href="https://youtu.be/i6x37tJY-58" target="_blank" rel="noopener noreferrer">Ver vídeo ▶</a>
+                    </div>
+                </article>
+
+                <article class="demo-card">
+                    <div class="card-top">
+                        <span class="number">DEMO / 05</span>
+                        <span class="symbol">▣</span>
+                    </div>
+                    <p class="category">Posicionamento CSS</p>
+                    <h3>Position e seletores</h3>
+                    <p class="description">Descobre como posicionar elementos e combinar diferentes regras de seleção.</p>
+                    <div class="card-actions">
+                        <a class="exercise-link" href="video5.html">Ver exercício ↗</a>
+                        <a class="video-link" href="https://youtu.be/Cg9GkRVJUMc" target="_blank" rel="noopener noreferrer">Ver vídeo ▶</a>
+                    </div>
+                </article>
+
+                <article class="demo-card">
+                    <div class="card-top">
+                        <span class="number">DEMO / 06</span>
+                        <span class="symbol">☻</span>
+                    </div>
+                    <p class="category">CSS Flexbox</p>
+                    <h3>Centrar um smile</h3>
+                    <p class="description">Utiliza Flexbox para alinhar e centrar elementos de forma simples.</p>
+                    <div class="card-actions">
+                        <a class="exercise-link" href="video6.html">Ver exercício ↗</a>
+                        <a class="video-link" href="https://youtu.be/eGqXr3iOnRA" target="_blank" rel="noopener noreferrer">Ver vídeo ▶</a>
+                    </div>
+                </article>
+
+                <article class="demo-card">
+                    <div class="card-top">
+                        <span class="number">DEMO / 07</span>
+                        <span class="symbol">▦</span>
+                    </div>
+                    <p class="category">CSS Grid</p>
+                    <h3>Grid Layout</h3>
+                    <p class="description">Organiza os elementos numa grelha com linhas e colunas.</p>
+                    <div class="card-actions">
+                        <a class="exercise-link" href="video7.html">Ver exercício ↗</a>
+                        <a class="video-link" href="https://youtu.be/nmofjZIkxjo" target="_blank" rel="noopener noreferrer">Ver vídeo ▶</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="bottom-banner">
+                <div>
+                    <h2>Continua a aprender</h2>
+                    <p>Consulta os videotutoriais para rever os conceitos e acompanhar as explicações.</p>
+                </div>
+                <a href="../videotutoriais.html">Ver videotutoriais ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="../index.html" class="logo">Guilherme<span>.</span></a>
+        <p>Portefólio de Desenvolvimento de Interfaces Web · 2026</p>
+    </footer>
 </body>
 </html>

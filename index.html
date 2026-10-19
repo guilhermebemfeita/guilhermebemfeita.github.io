@@ -4,121 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portefólio de Desenvolvimento de Interfaces Web de Guilherme.">
-    <title>Portefólio DIW | Guilherme</title>
+    <title>Guilherme | Portefólio DIW</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header" id="inicio">
-        <a href="#inicio" class="logo">Guilherme<span>.</span></a>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#laboratorios">Laboratórios</a>
-            <a href="#demos">Demos</a>
-            <a href="#tutoriais">Videotutoriais</a>
-        </nav>
-    </header>
-
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <p class="eyebrow">DESENVOLVIMENTO DE INTERFACES WEB</p>
-                <h1>Aprender, criar e desenvolver para a <span>Web.</span></h1>
-                <p class="hero-description">Este portefólio reúne os meus trabalhos práticos, os laboratórios realizados e os recursos de aprendizagem desenvolvidos ao longo da unidade curricular de DIW.</p>
-                <a href="#laboratorios" class="button">Explorar trabalhos <span>↗</span></a>
-            </div>
+        <section id="inicio" class="hero">
+            <nav aria-label="Menu principal">
+                <a class="logo" href="#inicio">Guilherme.</a>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#laboratorios">Laboratórios</a></li>
+                    <li><a href="#disciplina">Sobre DIW</a></li>
+                    <li><a href="videotutoriais.html">Videotutoriais</a></li>
+                    <li><a href="demos/demos.html">Demos</a></li>
+                </ul>
+            </nav>
 
-            <div class="hero-visual">
-                <div class="visual-top"><span></span><span></span><span></span></div>
-                <div class="code-symbol">&lt;/&gt;</div>
-                <p class="visual-label">O MEU ESPAÇO DE DESENVOLVIMENTO WEB</p>
-                <div class="technology-list">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>Web Design</span>
-                </div>
+            <div class="texto-hero">
+                <p class="etiqueta">GUILHERME · DIW 2026</p>
+                <h1>O meu portefólio</h1>
+                <p>Um espaço para mostrar o que vou aprendendo e construindo nas aulas de Desenvolvimento de Interfaces Web.</p>
+                <a class="botao" href="#laboratorios">Ver os meus trabalhos</a>
             </div>
         </section>
 
-        <section class="section" id="laboratorios">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">PERCURSO ACADÉMICO</p>
-                    <h2>Os meus laboratórios</h2>
-                </div>
-                <p>Explora os trabalhos desenvolvidos nas primeiras etapas da unidade curricular.</p>
-            </div>
+        <section id="laboratorios" class="projetos">
+            <p class="etiqueta">O MEU TRABALHO</p>
+            <h2>Projetos e laboratórios</h2>
+            <p>Cada laboratório representa uma nova etapa da minha aprendizagem.</p>
 
-            <div class="project-grid">
-                <article class="project-card">
-                    <div class="card-top"><span class="card-number">01</span><span class="card-icon">&lt;/&gt;</span></div>
-                    <p class="card-category">LABORATÓRIO</p>
+            <div class="contentor-cartoes">
+                <article class="cartao">
+                    <span class="numero">01</span>
                     <h3>Lab 1</h3>
-                    <p>Consulta os exercícios e as páginas desenvolvidas no primeiro laboratório.</p>
-                    <a href="lab1/">Explorar laboratório <span>↗</span></a>
+                    <p>As primeiras páginas e os fundamentos de HTML.</p>
+                    <a href="lab1/index.html">Abrir Lab 1 →</a>
                 </article>
 
-                <article class="project-card">
-                    <div class="card-top"><span class="card-number">02</span><span class="card-icon">{ }</span></div>
-                    <p class="card-category">LABORATÓRIO</p>
+                <article class="cartao">
+                    <span class="numero">02</span>
                     <h3>Lab 2</h3>
-                    <p>Consulta os trabalhos e os exercícios realizados no segundo laboratório.</p>
-                    <a href="lab2/">Explorar laboratório <span>↗</span></a>
+                    <p>Conteúdos multimédia, imagens e organização de páginas.</p>
+                    <a href="lab2/index.html">Abrir Lab 2 →</a>
                 </article>
 
-                <article class="project-card">
-                    <div class="card-top"><span class="card-number">03</span><span class="card-icon">◈</span></div>
-                    <p class="card-category">LABORATÓRIO</p>
+                <article class="cartao">
+                    <span class="numero">03</span>
                     <h3>Lab 3</h3>
-                    <p>Explora os projetos e as atividades práticas do terceiro laboratório.</p>
-                    <a href="lab3/">Explorar laboratório <span>↗</span></a>
+                    <p>Estruturação de páginas e apresentação com CSS.</p>
+                    <a href="lab3/index.html">Abrir Lab 3 →</a>
+                </article>
+
+                <article class="cartao">
+                    <span class="numero">04</span>
+                    <h3>Demos</h3>
+                    <p>Sete demonstrações práticas de CSS e layouts web.</p>
+                    <a href="demos/demos.html">Explorar Demos →</a>
+                </article>
+
+                <article class="cartao">
+                    <span class="numero">05</span>
+                    <h3>Videotutoriais</h3>
+                    <p>Vídeos explicativos para acompanhar os exercícios.</p>
+                    <a href="videotutoriais.html">Ver videotutoriais →</a>
                 </article>
             </div>
         </section>
 
-        <section class="demos-section" id="demos">
-            <div class="demos-content">
-                <p class="eyebrow">EXPERIMENTAR E PRATICAR</p>
-                <h2>Demos</h2>
-                <p>Explora sete demonstrações práticas de HTML e CSS, incluindo seletores, responsividade, Flexbox e Grid.</p>
-                <a href="demos/demos.html" class="button button-light">Ver demonstrações <span>↗</span></a>
+        <section id="disciplina" class="disciplina">
+            <div class="disciplina-texto">
+                <p class="etiqueta">O QUE ESTOU A APRENDER</p>
+                <h2>Desenvolvimento de Interfaces Web</h2>
+                <p>Nesta unidade curricular estou a aprender a criar páginas web, organizar conteúdos e melhorar a sua apresentação.</p>
+                <ul>
+                    <li><strong>HTML</strong> — estrutura e conteúdo.</li>
+                    <li><strong>CSS</strong> — estilos e organização visual.</li>
+                    <li><strong>JavaScript</strong> — interação com o utilizador.</li>
+                </ul>
             </div>
-
-            <div class="demo-decoration">
-                <div class="demo-window">
-                    <div class="demo-window-top"><span></span><span></span><span></span></div>
-                    <div class="demo-line long"></div>
-                    <div class="demo-line medium"></div>
-                    <div class="demo-block"></div>
-                    <div class="demo-line short"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section tutorials-section" id="tutoriais">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">RECURSOS DE APRENDIZAGEM</p>
-                    <h2>Videotutoriais</h2>
-                </div>
-                <p>Vídeos criados para explicar conceitos e demonstrar técnicas de HTML e CSS.</p>
-            </div>
-
-            <div class="tutorial-card">
-                <div class="tutorial-icon">▶</div>
-                <div class="tutorial-text">
-                    <h3>Aprende ao teu ritmo</h3>
-                    <p>Acede à coleção de videotutoriais e acompanha os exemplos passo a passo.</p>
-                </div>
-                <a href="videotutoriais.html">Ver videotutoriais <span>↗</span></a>
-            </div>
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Computador numa secretária de trabalho">
         </section>
     </main>
 
     <footer>
-        <a href="#inicio" class="logo">Guilherme<span>.</span></a>
-        <p>Portefólio de Desenvolvimento de Interfaces Web</p>
-        <a href="#inicio" class="back-top">Voltar ao início ↑</a>
+        <a class="logo" href="#inicio">Guilherme.</a>
+        <p>Portefólio de Desenvolvimento de Interfaces Web · 2026</p>
+        <a href="#inicio">Voltar ao início ↑</a>
     </footer>
 </body>
 </html>
