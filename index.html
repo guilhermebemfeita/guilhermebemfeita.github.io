@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -8,77 +7,67 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
+    <header>
         <a href="#inicio" class="logo">Guilherme<span>.</span></a>
         <nav>
             <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre</a>
             <a href="#laboratorios">Laboratórios</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#tutoriais">Tutoriais</a>
+            <a href="#demos">Demos</a>
+            <a href="#tutoriais">Videotutoriais</a>
         </nav>
     </header>
 
-<main>
-    <section class="hero" id="inicio">
-        <div class="hero-content">
+    <main>
+        <section class="hero" id="inicio">
             <p class="eyebrow">DESENVOLVIMENTO DE INTERFACES WEB</p>
-            <h1>O meu percurso no <span>mundo web.</span></h1>
-            <p class="intro">Bem-vindo ao meu portefólio académico. Aqui apresento os trabalhos, laboratórios e projetos desenvolvidos ao longo da unidade curricular de DIW.</p>
+            <h1>O meu portefólio <span>DIW</span></h1>
+            <p>Bem-vindo ao meu espaço de Desenvolvimento de Interfaces Web. Aqui podes explorar os meus laboratórios, demonstrações e videotutoriais.</p>
             <a href="#laboratorios" class="button">Explorar trabalhos</a>
-        </div>
-        <div class="hero-card">
-            <div class="code-icon">&lt;/&gt;</div>
-            <p>CRIAR · DESENVOLVER · APRENDER</p>
-            <h2>Web Development</h2>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section about" id="sobre">
-        <p class="eyebrow">QUEM SOU</p>
-        <h2>Sobre o portefólio</h2>
-        <p>Este espaço reúne os exercícios práticos, os projetos e os recursos de aprendizagem que fui desenvolvendo em Desenvolvimento de Interfaces Web.</p>
-    </section>
+        <section class="section" id="laboratorios">
+            <p class="eyebrow">TRABALHOS ACADÉMICOS</p>
+            <h2>Laboratórios</h2>
+            <div class="grid">
+                <article class="project">
+                    <span>LAB 01</span>
+                    <h3>Laboratório 1</h3>
+                    <p>Exercícios e trabalhos desenvolvidos no primeiro laboratório.</p>
+                    <a href="lab1/">Abrir laboratório ↗</a>
+                </article>
+                <article class="project">
+                    <span>LAB 02</span>
+                    <h3>Laboratório 2</h3>
+                    <p>Exercícios e trabalhos desenvolvidos no segundo laboratório.</p>
+                    <a href="lab2/">Abrir laboratório ↗</a>
+                </article>
+                <article class="project">
+                    <span>LAB 03</span>
+                    <h3>Laboratório 3</h3>
+                    <p>Exercícios e trabalhos desenvolvidos no terceiro laboratório.</p>
+                    <a href="lab3/">Abrir laboratório ↗</a>
+                </article>
+            </div>
+        </section>
 
-    <section class="section" id="laboratorios">
-        <p class="eyebrow">TRABALHO ACADÉMICO</p>
-        <h2>Os meus laboratórios</h2>
-        <p class="section-description">Explora os trabalhos realizados ao longo da unidade curricular.</p>
-        <div class="grid">
-            <article class="project"><span class="number">01</span><h3>Laboratório 1</h3><p>Exercícios e conceitos introdutórios de desenvolvimento web.</p><a href="lab1/">Ver laboratório ↗</a></article>
-            <article class="project"><span class="number">02</span><h3>Laboratório 2</h3><p>Prática e consolidação dos fundamentos da web.</p><a href="lab2/">Ver laboratório ↗</a></article>
-            <article class="project"><span class="number">03</span><h3>Laboratório 3</h3><p>Estruturação de páginas e aplicação de estilos.</p><a href="lab3/">Ver laboratório ↗</a></article>
-            <article class="project"><span class="number">04</span><h3>Laboratório 4</h3><p>Exercícios e desenvolvimento de novas interfaces.</p><a href="lab4/">Ver laboratório ↗</a></article>
-            <article class="project"><span class="number">05</span><h3>Laboratório 5</h3><p>Aplicação prática dos conhecimentos adquiridos.</p><a href="lab5/">Ver laboratório ↗</a></article>
-            <article class="project"><span class="number">06</span><h3>Laboratório 6</h3><p>Continuação do percurso prático de DIW.</p><a href="lab6/">Ver laboratório ↗</a></article>
-        </div>
-    </section>
+        <section class="section alternate" id="demos">
+            <p class="eyebrow">EXEMPLOS PRÁTICOS</p>
+            <h2>Demos</h2>
+            <p>Explora as demonstrações práticas desenvolvidas durante as aulas.</p>
+            <a href="demos/" class="button">Ver demos</a>
+        </section>
 
-    <section class="section extra" id="projetos">
-        <p class="eyebrow">PROJETOS PESSOAIS</p>
-        <h2>Projetos em destaque</h2>
-        <div class="project featured">
-            <span class="number">PROJETO</span>
-            <h3>Página sobre o cantor Palma</h3>
-            <p>Uma página web dedicada à apresentação de um artista musical.</p>
-            <a href="Palma/">Explorar projeto ↗</a>
-        </div>
-    </section>
+        <section class="section" id="tutoriais">
+            <p class="eyebrow">APRENDER PASSO A PASSO</p>
+            <h2>Videotutoriais</h2>
+            <p>Vídeos de apoio para aprender e praticar HTML, CSS e desenvolvimento web.</p>
+            <a href="videotutoriais/" class="button">Ver videotutoriais</a>
+        </section>
+    </main>
 
-    <section class="section tutorials" id="tutoriais">
-        <p class="eyebrow">APRENDER E PARTILHAR</p>
-        <h2>Videotutoriais</h2>
-        <p class="section-description">Vídeos e recursos de apoio à aprendizagem de HTML e CSS.</p>
-        <a href="videotutoriais/" class="button">Ver videotutoriais</a>
-        <a href="tutoriais.html" class="text-link">Abrir página de tutoriais ↗</a>
-    </section>
-</main>
-
-<footer>
-    <p>Portefólio de Desenvolvimento de Interfaces Web</p>
-    <p>Guilherme · 2026</p>
-</footer>
-
+    <footer>
+        <p>Portefólio de Desenvolvimento de Interfaces Web</p>
+        <p>Guilherme · 2026</p>
+    </footer>
 </body>
 </html>
