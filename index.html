@@ -4,92 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guilherme | Portefólio DIW</title>
+    <meta name="description" content="Portefólio académico de Guilherme Bemfeita, estudante de Desenvolvimento de Interfaces Web.">
+    <title>Guilherme Bemfeita | Portefólio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="hero" id="inicio">
+        <nav class="navegacao">
+            <a class="logo" href="#inicio">Guilherme Bemfeita<span>.</span></a>
+            <ul class="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#laboratorios">Laboratórios</a></li>
+                <li><a href="#disciplina">Sobre DIW</a></li>
+                <li><a href="videotutoriais.html">Videotutoriais</a></li>
+                <li><a href="demos/demos.html">Demos</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-conteudo">
+            <p class="etiqueta">PORTefÓLIO ACADÉMICO · 2026/2027</p>
+            <h1>Guilherme<br><span>Bemfeita.</span></h1>
+            <p class="hero-descricao">
+                Explorar, criar e desenvolver experiências digitais.
+                Um espaço dedicado aos meus projetos de Desenvolvimento
+                de Interfaces Web.
+            </p>
+            <a class="botao" href="#laboratorios">Explorar projetos <span>↗</span></a>
+        </div>
+
+        <div class="hero-rodape">
+            <span>DESENVOLVIMENTO DE INTERFACES WEB</span>
+            <a href="#laboratorios">DESCOBRIR MAIS ↓</a>
+        </div>
+    </header>
+
     <main>
-        <section id="inicio" class="hero">
-            <nav aria-label="Menu principal">
-                <a class="logo" href="#inicio">Guilherme.</a>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#laboratorios">Laboratórios</a></li>
-                    <li><a href="#disciplina">Sobre DIW</a></li>
-                    <li><a href="videotutoriais.html">Videotutoriais</a></li>
-                    <li><a href="demos/demos.html">Demos</a></li>
-                </ul>
-            </nav>
-
-            <div class="texto-hero">
-                <p class="etiqueta">GUILHERME · DIW 2026</p>
-                <h1>O meu portefólio</h1>
-                <p>Um espaço para mostrar o que vou aprendendo e construindo nas aulas de Desenvolvimento de Interfaces Web.</p>
-                <a class="botao" href="#laboratorios">Ver os meus trabalhos</a>
+        <section class="projetos secao" id="laboratorios">
+            <div class="cabecalho-secao">
+                <div>
+                    <p class="etiqueta">O MEU TRABALHO</p>
+                    <h2>Projetos e <span>laboratórios.</span></h2>
+                </div>
+                <p class="introducao">
+                    Exercícios, experiências e trabalhos desenvolvidos
+                    ao longo da unidade curricular.
+                </p>
             </div>
-        </section>
 
-        <section id="laboratorios" class="projetos">
-            <p class="etiqueta">O MEU TRABALHO</p>
-            <h2>Projetos e laboratórios</h2>
-            <p>Cada laboratório representa uma nova etapa da minha aprendizagem.</p>
-
-            <div class="contentor-cartoes">
-                <article class="cartao">
+            <div class="grelha-projetos">
+                <a class="cartao" href="lab1/index.html">
                     <span class="numero">01</span>
-                    <h3>Lab 1</h3>
-                    <p>As primeiras páginas e os fundamentos de HTML.</p>
-                    <a href="lab1/index.html">Abrir Lab 1 →</a>
-                </article>
+                    <div>
+                        <p class="categoria">LABORATÓRIO</p>
+                        <h3>Laboratório 1</h3>
+                        <p>Primeiros passos na construção de páginas web.</p>
+                    </div>
+                    <span class="seta">↗</span>
+                </a>
 
-                <article class="cartao">
+                <a class="cartao" href="lab2/index.html">
                     <span class="numero">02</span>
-                    <h3>Lab 2</h3>
-                    <p>Conteúdos multimédia, imagens e organização de páginas.</p>
-                    <a href="lab2/index.html">Abrir Lab 2 →</a>
-                </article>
+                    <div>
+                        <p class="categoria">LABORATÓRIO</p>
+                        <h3>Laboratório 2</h3>
+                        <p>Estrutura, conteúdo e organização de páginas.</p>
+                    </div>
+                    <span class="seta">↗</span>
+                </a>
 
-                <article class="cartao">
+                <a class="cartao" href="lab3/index.html">
                     <span class="numero">03</span>
-                    <h3>Lab 3</h3>
-                    <p>Estruturação de páginas e apresentação com CSS.</p>
-                    <a href="lab3/index.html">Abrir Lab 3 →</a>
-                </article>
+                    <div>
+                        <p class="categoria">LABORATÓRIO</p>
+                        <h3>Laboratório 3</h3>
+                        <p>Aplicação de HTML e CSS nos meus projetos.</p>
+                    </div>
+                    <span class="seta">↗</span>
+                </a>
 
-                <article class="cartao">
+                <a class="cartao" href="demos/demos.html">
                     <span class="numero">04</span>
-                    <h3>Demos</h3>
-                    <p>Sete demonstrações práticas de CSS e layouts web.</p>
-                    <a href="demos/demos.html">Explorar Demos →</a>
-                </article>
+                    <div>
+                        <p class="categoria">EXPERIMENTAÇÃO</p>
+                        <h3>Demos</h3>
+                        <p>Demonstrações práticas de desenvolvimento web.</p>
+                    </div>
+                    <span class="seta">↗</span>
+                </a>
 
-                <article class="cartao">
+                <a class="cartao" href="videotutoriais.html">
                     <span class="numero">05</span>
-                    <h3>Videotutoriais</h3>
-                    <p>Vídeos explicativos para acompanhar os exercícios.</p>
-                    <a href="videotutoriais.html">Ver videotutoriais →</a>
-                </article>
+                    <div>
+                        <p class="categoria">APRENDIZAGEM</p>
+                        <h3>Videotutoriais</h3>
+                        <p>Vídeos e recursos para aprender HTML e CSS.</p>
+                    </div>
+                    <span class="seta">↗</span>
+                </a>
             </div>
         </section>
 
-        <section id="disciplina" class="disciplina">
+        <section class="disciplina secao" id="disciplina">
             <div class="disciplina-texto">
-                <p class="etiqueta">O QUE ESTOU A APRENDER</p>
-                <h2>Desenvolvimento de Interfaces Web</h2>
-                <p>Nesta unidade curricular estou a aprender a criar páginas web, organizar conteúdos e melhorar a sua apresentação.</p>
-                <ul>
-                    <li><strong>HTML</strong> — estrutura e conteúdo.</li>
-                    <li><strong>CSS</strong> — estilos e organização visual.</li>
-                    <li><strong>JavaScript</strong> — interação com o utilizador.</li>
-                </ul>
+                <p class="etiqueta">SOBRE A UNIDADE CURRICULAR</p>
+                <h2>Transformar ideias<br>em <span>experiências.</span></h2>
+                <p>
+                    A unidade curricular de Desenvolvimento de Interfaces Web
+                    permite explorar tecnologias fundamentais para criar
+                    páginas web estruturadas, apelativas e adaptáveis
+                    a diferentes dispositivos.
+                </p>
+                <a class="link-texto" href="videotutoriais.html">Explorar videotutoriais ↗</a>
             </div>
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Computador numa secretária de trabalho">
+
+            <div class="imagem-disciplina">
+                <div class="imagem-legenda">
+                    <span>CRIATIVIDADE & TECNOLOGIA</span>
+                    <span>01 — 2026/2027</span>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <a class="logo" href="#inicio">Guilherme.</a>
-        <p>Portefólio de Desenvolvimento de Interfaces Web · 2026</p>
+    <footer class="rodape">
+        <a class="logo" href="#inicio">Guilherme Bemfeita<span>.</span></a>
+        <p>Portefólio académico · DIW 2026/2027</p>
         <a href="#inicio">Voltar ao início ↑</a>
     </footer>
 </body>
