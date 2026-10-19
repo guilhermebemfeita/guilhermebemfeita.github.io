@@ -5,7 +5,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 30px;
 }
 
 body {
@@ -13,7 +12,7 @@ body {
     font-family: Arial, sans-serif;
     color: #292b28;
     background: #faf8f3;
-    line-height: 1.65;
+    line-height: 1.6;
 }
 
 a {
@@ -25,20 +24,15 @@ a:hover {
     text-decoration: underline;
 }
 
-a:focus-visible {
-    outline: 3px solid #52765c;
-    outline-offset: 4px;
-}
-
 .hero {
-    min-height: 590px;
+    min-height: 580px;
     position: relative;
     display: flex;
     align-items: flex-end;
     padding: 60px 7%;
     background:
-        linear-gradient(rgba(25, 37, 28, 0.2), rgba(25, 37, 28, 0.35)),
-        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+        linear-gradient(rgba(20, 30, 23, 0.15), rgba(20, 30, 23, 0.3)),
+        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
 }
 
 nav {
@@ -47,11 +41,12 @@ nav {
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 15px 7%;
-    background: rgba(250, 248, 243, 0.95);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 18px 7%;
+    background: rgba(250, 248, 243, 0.96);
 }
 
 .logo {
@@ -63,7 +58,7 @@ nav {
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 18px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -75,9 +70,10 @@ nav a {
 }
 
 .texto-hero {
+    width: 100%;
     max-width: 600px;
     padding: 30px;
-    background: rgba(250, 248, 243, 0.96);
+    background: #faf8f3;
 }
 
 .etiqueta {
@@ -90,12 +86,12 @@ nav a {
 h1,
 h2,
 h3 {
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
 h1 {
     margin: 12px 0;
-    font-size: clamp(38px, 5vw, 58px);
+    font-size: clamp(36px, 5vw, 56px);
 }
 
 h2 {
@@ -156,18 +152,18 @@ h2 {
 .disciplina {
     display: flex;
     align-items: center;
-    gap: 45px;
+    gap: 35px;
     padding: 65px 7%;
     background: white;
 }
 
-.disciplina-texto,
-.disciplina img {
-    width: 50%;
+.disciplina-texto {
+    flex: 1;
 }
 
 .disciplina img {
     display: block;
+    width: 50%;
     max-width: 100%;
     height: auto;
 }
@@ -192,8 +188,8 @@ footer p {
 
 @media (max-width: 700px) {
     .hero {
-        min-height: 600px;
-        padding: 30px 20px;
+        min-height: 620px;
+        padding: 25px 20px;
     }
 
     nav {
@@ -203,11 +199,7 @@ footer p {
     }
 
     nav ul {
-        gap: 10px 16px;
-    }
-
-    nav a {
-        font-size: 13px;
+        gap: 10px 15px;
     }
 
     .texto-hero {
@@ -222,10 +214,8 @@ footer p {
     .disciplina {
         flex-direction: column;
         align-items: flex-start;
-        gap: 25px;
     }
 
-    .disciplina-texto,
     .disciplina img {
         width: 100%;
     }
