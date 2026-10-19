@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS layout responsivo com media query</title>
+</head>
+<style>
+    header, nav, main, aside, footer {
+    background-color: white;
+    opacity: 0.6;
+    border: 1px solid black;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: menu;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+div.contentor {
+    margin: 20px;
+    height: 500px;
+    background-color: purple;
+    display: grid;
+
+    grid-template-areas:
+        "header header header"
+        "menu main aside"
+        "menu footer footer";
+
+    gap: 10px;
+    padding: 10px;
+
+    grid-template-columns: 20vw 3fr 2fr;
+    grid-template-rows: 15vh 1fr 60px;
+}
+
+@media (max-width: 600px) {
+    div.contentor {
+        height: 900px;
+        background-color: khaki;
+grid-template-columns: auto;
+        grid-template-rows: 15vh 10vh 2fr 1fr 60px;
+        grid-template-areas:
+            "header"
+            "menu"
+            "main"
+            "aside"
+            "footer";
+    }
+}
+
+</style>
+<body>
+    <div class="contentor">
+        <header>Titulo</header>
+        <nav>Menu</nav>
+        <main>Conteudo</main>
+        <aside>Info</aside>
+        <footer>Guilherme</footer>
+    </div>
+    
+</body>
+</html>

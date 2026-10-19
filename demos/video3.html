@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools responsividade</title>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+/* Aspeto geral. */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #243746;
+    background-color: #edf2f5;
+}
+
+
+
+h1 {
+    margin-top: 0;
+}
+
+
+h2 {
+    margin-top: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+        @media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    section {
+        padding: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+     <header>
+        <h1>Lisboa</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#multimedia">Multimédia</a>
+            <a href="#informacao">Informação</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Bem-vindo ao site do Guilherme.</p>
+            <p>Aqui apresento a Lisboa e alguns dos seus locais.</p>
+        </section>
+
+        <section id="localizacao">
+            <h2>Localização</h2>
+            <p>Lisboa fica em Portugal.</p>
+        </section>
+
+        <section id="multimedia">
+            <h2>Multimédia</h2>
+            <img src="images/praca.jpg" alt="Vista da Lisboa">
+        </section>
+
+        <section id="informacao">
+            <h2>Informação</h2>
+            <h3>Esta página serve para testar diferentes tamanhos de ecrã.</h3>
+           <h3>Da inspect no site e testa diferentes tamanhos</h3>
+        </section>
+    </main>
+
+    <footer>
+        <p>Guilherme — 2026</p>
+    </footer>
+</body>
+</html>

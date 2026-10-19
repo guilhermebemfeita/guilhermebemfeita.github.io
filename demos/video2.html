@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+CSS composicao de seletores</title>
+<style>
+main > div:first-child{color:red;}
+div div:nth-child(2){color:blue;}
+div div + div{color:green;}
+div + p{color:purple;}
+</style>
+</head>
+<body>
+    <main>
+        <div>Vermelho</div>
+        <div>
+            <span>Preto</span>
+            <div>Azul</div>
+            <div>Verde</div>
+        </div>
+        <p>Violeta</p>
+        <p>Preto</p>
+        <p>Preto</p>
+    </main>
+</body>
+</html>

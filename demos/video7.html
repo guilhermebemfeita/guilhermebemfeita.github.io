@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid layout</title>
+    <style>
+        * {color: white;}
+        .contentor > * {
+            background-color: brown;
+            border: 1px solid black;
+            padding: 1rem;
+            font-size: 2rem;
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        nav {
+            grid-area: menu;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        div.contentor {
+            margin: 20px;
+            height: 500px;
+            background-color: black;
+            display: grid;
+
+            grid-template-areas:
+                "header header header"
+                "menu main aside"
+                "menu footer footer";
+
+            gap: 10px;
+            padding: 10px;
+
+            grid-template-columns: 20vw 3fr 2fr;
+            grid-template-rows: 15vh 1fr 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contentor">
+        <header>título</header>
+        <nav>menu</nav>
+        <main>conteúdo</main>
+        <aside>info</aside>
+        <footer>GUILHERME</footer>
+    </div>
+</body>
+
+</html>

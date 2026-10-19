@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS position e seletores varios</title>
+    <style>
+.contentor div {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: dodgerblue;
+    width: 80vw;
+}
+
+div:last-child {
+    background-color: khaki;
+}
+
+div:nth-child(2) {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+.fora {
+    background-color: salmon;
+    height: 100px;
+    position: relative;
+}
+
+.dentro {
+    background-color: grey;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+    </style>
+</head>
+
+<body>
+    <h1>Posição relativa</h1>
+
+    <div class="contentor">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <h1>Posição absoluta</h1>
+
+    <div class="fora">
+        <div class="dentro"></div>
+    </div>
+</body>
+
+</html>
