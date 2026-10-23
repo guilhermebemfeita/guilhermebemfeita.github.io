@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5 - JavaScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+      }
+
+      section {
+        margin-bottom: 45px;
+      }
+
+      #pinta {
+        color: purple;
+      }
+
+      #escrever {
+        background-color: lightblue;
+        height: 25px;
+      }
+
+      #bolas {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        height: 200px;
+        background-color: #ddd;
+        padding: 10px;
+        box-sizing: border-box;
+        align-items: flex-start;
+      }
+
+      .bola {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .bola:nth-child(1) {
+        background-color: red;
+      }
+
+      .bola:nth-child(2) {
+        background-color: green;
+      }
+
+      .bola:nth-child(3) {
+        background-color: blue;
+      }
+
+      .bola:nth-child(4) {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <p id="passa">1. Passa por aqui!</p>
+    </section>
+
+    <section>
+      <p id="pinta">2. Pinta-me</p>
+      <button class="color" data-color="red">Red</button>
+      <button class="color" data-color="green">Green</button>
+      <button class="color" data-color="blue">Blue</button>
+    </section>
+
+    <section>
+      <label for="escrever">3. Experimenta escrever...</label>
+      <input type="text" id="escrever" />
+    </section>
+
+    <section>
+      <label for="cor">4. Escolha uma cor:</label>
+      <select id="cor">
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+      </select>
+    </section>
+
+    <section>
+      <p>5. Contador simples</p>
+      <button id="conta">Conta!</button>
+      <span id="resultado">0</span>
+    </section>
+
+    <section>
+      <form id="formularioDados">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Insira o seu nome" required />
+        <label for="idade">Idade:</label>
+        <input
+          type="number"
+          id="idade"
+          placeholder="Insira a sua idade"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
+      <p id="dados"></p>
+    </section>
+
+    <section>
+      <h2>Contador com Local Storage</h2>
+      <p>Valor: <span id="contador">0</span></p>
+      <button id="incrementar">Incrementar</button>
+      <button id="decrementar">Decrementar</button>
+      <button id="reset">Reset</button>
+    </section>
+
+    <section>
+      <h2>Select flex</h2>
+      <label for="direcao">Direção das bolas:</label>
+      <select id="direcao">
+        <option value="row">row</option>
+        <option value="row-reverse">row-reverse</option>
+        <option value="column">line</option>
+        <option value="column-reverse">line-reverse</option>
+      </select>
+
+      <div id="bolas">
+        <div class="bola"></div>
+        <div class="bola"></div>
+        <div class="bola"></div>
+        <div class="bola"></div>
+      </div>
+    </section>
+
+    <script>
+      const passa = document.getElementById("passa");
+      const pinta = document.getElementById("pinta");
+      const escrever = document.getElementById("escrever");
+      const cor = document.getElementById("cor");
+      const conta = document.getElementById("conta");
+      const resultado = document.getElementById("resultado");
+      const formularioDados = document.getElementById("formularioDados");
+      const nome = document.getElementById("nome");
+      const idade = document.getElementById("idade");
+      const dados = document.getElementById("dados");
+      const direcao = document.getElementById("direcao");
+      const bolas = document.getElementById("bolas");
+
+      passa.addEventListener("mouseover", () => {
+        passa.style.color = "blue";
+      });
+
+      passa.addEventListener("mouseout", () => {
+        passa.style.color = "black";
+      });
+
+      document.querySelectorAll("button.color").forEach((botao) => {
+        botao.addEventListener("click", () => {
+          pinta.style.color = botao.dataset.color;
+        });
+      });
+
+      const cores = ["red", "green", "blue", "purple"];
+      let indiceCor = 0;
+
+      escrever.addEventListener("input", () => {
+        escrever.style.backgroundColor = cores[indiceCor];
+        indiceCor = (indiceCor + 1) % cores.length;
+      });
+
+      cor.addEventListener("change", function () {
+        document.body.style.backgroundColor = this.value;
+      });
+
+      let numero = 0;
+
+      conta.addEventListener("click", () => {
+        numero++;
+        resultado.textContent = numero;
+      });
+
+      formularioDados.addEventListener("submit", (event) => {
+        event.preventDefault();
+        dados.textContent =
+          "Olá, o " + nome.value + " tem " + idade.value + "!";
+      });
+
+      let contador = Number(localStorage.getItem("contador") || 0);
+      const valorContador = document.getElementById("contador");
+
+      function atualizarContador() {
+        valorContador.textContent = contador;
+        localStorage.setItem("contador", contador);
+      }
+
+      atualizarContador();
+
+      document.getElementById("incrementar").addEventListener("click", () => {
+        contador++;
+        atualizarContador();
+      });
+
+      document.getElementById("decrementar").addEventListener("click", () => {
+        contador--;
+        atualizarContador();
+      });
+
+      document.getElementById("reset").addEventListener("click", () => {
+        contador = 0;
+        atualizarContador();
+      });
+
+      direcao.addEventListener("change", function () {
+        bolas.style.flexDirection = this.value;
+      });
+    </script>
+  </body>
+</html>
