@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Online</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Loja online de produtos para programadores.">
+    <title>Loja Online | DevStore</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Loja Online</h1>
+        <h1>DevStore<span>.</span></h1>
+        <p>Produtos para quem vive a programação.</p>
         <nav>
             <a href="#produtos">Produtos</a>
             <a href="#carrinho">Cesto de compras</a>
@@ -18,11 +20,18 @@
 
     <main>
         <section id="produtos">
-            <h2>Produtos</h2>
+            <div class="cabecalho-produtos">
+                <div>
+                    <p class="etiqueta">A NOSSA COLEÇÃO</p>
+                    <h2>Descobre os produtos.</h2>
+                </div>
+                <p>11 produtos para verdadeiros apaixonados por código.</p>
+            </div>
             <div id="lista-produtos"></div>
         </section>
 
         <section id="carrinho">
+            <p class="etiqueta">AS TUAS ESCOLHAS</p>
             <h2>Cesto de compras</h2>
             <div id="produtos-selecionados"></div>
             <p id="preco-total">Total: 0,00 €</p>
@@ -30,7 +39,8 @@
     </main>
 
     <footer>
-        <p>Loja Online</p>
+        <a class="logo" href="#">DevStore<span>.</span></a>
+        <p>Feito para quem gosta de programar.</p>
     </footer>
 
     <script src="produtos.js"></script>
