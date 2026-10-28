@@ -50,10 +50,10 @@ function criarProduto(produto) {
     return article;
 }
 
-function renderizarProdutos(produtos) {
+function renderizarProdutos(lista) {
     listaProdutos.innerHTML = "";
 
-    produtos.forEach(produto => {
+    lista.forEach(produto => {
         listaProdutos.append(criarProduto(produto));
     });
 }
