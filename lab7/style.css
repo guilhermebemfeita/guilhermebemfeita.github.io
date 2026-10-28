@@ -11,10 +11,10 @@ body {
 }
 
 header {
-    padding: 20px;
     background-color: #222;
     color: white;
     text-align: center;
+    padding: 20px;
 }
 
 nav {
@@ -62,8 +62,8 @@ main {
 }
 
 footer {
-    padding: 15px;
     background-color: #222;
     color: white;
     text-align: center;
+    padding: 15px;
 }
