@@ -98,5 +98,9 @@ function atualizarCesto() {
     elementoTotal.textContent = `Total: ${total.toFixed(2)} €`;
 }
 
-renderizarProdutos(produtos);
-atualizarCesto();
+if (typeof produtos !== "undefined" && Array.isArray(produtos)) {
+    renderizarProdutos(produtos);
+    atualizarCesto();
+} else {
+    listaProdutos.textContent = "Erro ao carregar os produtos. Verifica o ficheiro produtos.js.";
+}
