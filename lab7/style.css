@@ -32,13 +32,19 @@ main {
     padding: 20px;
 }
 
-#lista-produtos {
+section {
+    margin-bottom: 40px;
+}
+
+#lista-produtos,
+#produtos-selecionados {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-#lista-produtos article {
+#lista-produtos article,
+#produtos-selecionados article {
     flex: 1 1 220px;
     max-width: 300px;
     padding: 15px;
@@ -53,12 +59,33 @@ main {
     object-fit: contain;
 }
 
-#lista-produtos h2 {
+#lista-produtos h2,
+#produtos-selecionados h2 {
     font-size: 18px;
 }
 
-#lista-produtos p {
+#lista-produtos p,
+#produtos-selecionados p {
     line-height: 1.5;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+#preco-total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 footer {

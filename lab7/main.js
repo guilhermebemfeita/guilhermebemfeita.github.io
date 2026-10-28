@@ -1,9 +1,21 @@
 
 const listaProdutos = document.getElementById("lista-produtos");
+const listaCesto = document.getElementById("produtos-selecionados");
+const elementoTotal = document.getElementById("preco-total");
+const chaveCarrinho = "produtos-selecionados";
 
-// A. Estado e variáveis com referência de elementos do DOM
+if (localStorage.getItem(chaveCarrinho) === null) {
+    localStorage.setItem(chaveCarrinho, JSON.stringify([]));
+}
 
-// B. Funções utilitárias
+function obterCarrinho() {
+    return JSON.parse(localStorage.getItem(chaveCarrinho)) || [];
+}
+
+function guardarCarrinho(carrinho) {
+    localStorage.setItem(chaveCarrinho, JSON.stringify(carrinho));
+}
+
 function criarProduto(produto) {
     const article = document.createElement("article");
 
@@ -18,25 +30,73 @@ function criarProduto(produto) {
     descricao.textContent = produto.description;
 
     const preco = document.createElement("p");
-    preco.textContent = `${produto.price.toFixed(2)} €`;
+    preco.textContent = `${Number(produto.price).toFixed(2)} €`;
 
     const avaliacao = document.createElement("p");
     avaliacao.textContent = `Avaliação: ${produto.rating.rate}/5 (${produto.rating.count} avaliações)`;
 
-    article.append(imagem, titulo, descricao, preco, avaliacao);
+    const botao = document.createElement("button");
+    botao.textContent = "+ Adicionar ao cesto";
+
+    botao.addEventListener("click", () => {
+        const carrinho = obterCarrinho();
+        carrinho.push(produto);
+        guardarCarrinho(carrinho);
+        atualizarCesto();
+    });
+
+    article.append(imagem, titulo, descricao, preco, avaliacao, botao);
 
     return article;
 }
 
-// C. Event handlers
 function renderizarProdutos(produtos) {
+    listaProdutos.innerHTML = "";
+
     produtos.forEach(produto => {
-        const artigo = criarProduto(produto);
-        listaProdutos.append(artigo);
+        listaProdutos.append(criarProduto(produto));
     });
 }
 
-// D. Event Listeners
+function criaProdutoCesto(produto, indice) {
+    const article = document.createElement("article");
 
-// E. Inicialização
+    const titulo = document.createElement("h2");
+    titulo.textContent = produto.title;
+
+    const preco = document.createElement("p");
+    preco.textContent = `${Number(produto.price).toFixed(2)} €`;
+
+    const botaoRemover = document.createElement("button");
+    botaoRemover.textContent = "Remover do cesto";
+
+    botaoRemover.addEventListener("click", () => {
+        const carrinho = obterCarrinho();
+        carrinho.splice(indice, 1);
+        guardarCarrinho(carrinho);
+        atualizarCesto();
+    });
+
+    article.append(titulo, preco, botaoRemover);
+
+    return article;
+}
+
+function atualizarCesto() {
+    const carrinho = obterCarrinho();
+
+    listaCesto.innerHTML = "";
+
+    carrinho.forEach((produto, indice) => {
+        listaCesto.append(criaProdutoCesto(produto, indice));
+    });
+
+    const total = carrinho.reduce((soma, produto) => {
+        return soma + Number(produto.price);
+    }, 0);
+
+    elementoTotal.textContent = `Total: ${total.toFixed(2)} €`;
+}
+
 renderizarProdutos(produtos);
+atualizarCesto();
