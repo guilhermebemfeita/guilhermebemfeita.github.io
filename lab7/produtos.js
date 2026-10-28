@@ -1,42 +1,69 @@
 
-const listaProdutos = document.getElementById("lista-produtos");
-
-// A. Estado e variáveis com referência de elementos do DOM
-
-// B. Funções utilitárias
-function criarProduto(produto) {
-    const article = document.createElement("article");
-
-    const imagem = document.createElement("img");
-    imagem.src = produto.image;
-    imagem.alt = produto.title;
-
-    const titulo = document.createElement("h2");
-    titulo.textContent = produto.title;
-
-    const descricao = document.createElement("p");
-    descricao.textContent = produto.description;
-
-    const preco = document.createElement("p");
-    preco.textContent = `${produto.price.toFixed(2)} €`;
-
-    const avaliacao = document.createElement("p");
-    avaliacao.textContent = `Avaliação: ${produto.rating.rate}/5 (${produto.rating.count} avaliações)`;
-
-    article.append(imagem, titulo, descricao, preco, avaliacao);
-
-    return article;
+* {
+    box-sizing: border-box;
 }
 
-// C. Event handlers
-function renderizarProdutos(produtos) {
-    produtos.forEach(produto => {
-        const artigo = criarProduto(produto);
-        listaProdutos.append(artigo);
-    });
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
 }
 
-// D. Event Listeners
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-// E. Inicialização
-renderizarProdutos(produtos);
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+#lista-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#lista-produtos article {
+    flex: 1 1 220px;
+    max-width: 300px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#lista-produtos img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+#lista-produtos h2 {
+    font-size: 18px;
+}
+
+#lista-produtos p {
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
