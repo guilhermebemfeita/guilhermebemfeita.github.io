@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loja Online | DevStore</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>DevStore<span>.</span></h1>
+        <p>Produtos para quem vive a programação.</p>
+        <nav aria-label="Navegação">
+            <a href="../index.html">Portefólio</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#carrinho">Cesto de compras</a>
+        </nav>
+    </header>
+    <main>
+        <section id="produtos">
+            <h2>Produtos</h2>
+            <div class="controlos">
+                <label>Categoria <select id="categoria"><option value="">Todas</option></select></label>
+                <label>Ordenar por preço <select id="ordem">
+                    <option value="">Predefinido</option>
+                    <option value="asc">Crescente</option>
+                    <option value="desc">Decrescente</option>
+                </select></label>
+                <label>Pesquisar <input id="pesquisa" type="search" placeholder="Nome do produto"></label>
+            </div>
+            <p id="estado-produtos" role="status">A carregar produtos…</p>
+            <div id="lista-produtos" class="grelha"></div>
+        </section>
+        <section id="carrinho">
+            <h2>Cesto de compras</h2>
+            <div id="produtos-selecionados" class="grelha"></div>
+            <p>Subtotal <strong id="preco-total">0,00 €</strong></p>
+            <form id="checkout" class="controlos">
+                <label>Nome <input name="name" autocomplete="name"></label>
+                <label>Cupão <input name="coupon"></label>
+                <label class="estudante"><input name="student" type="checkbox"> Sou estudante</label>
+                <button id="comprar" type="submit" disabled>Comprar</button>
+            </form>
+            <p id="resultado" role="status"></p>
+        </section>
+    </main>
+    <footer>DevStore · DIW · Lab 8</footer>
+</body>
+</html>
